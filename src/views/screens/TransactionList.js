@@ -1,102 +1,23 @@
-// import './userList.css';
-// import { DataGrid } from '@mui/x-data-grid';
-// import { DeleteOutline } from '@mui/icons-material';
-// import { userRows } from '../../dummyData';
-// import { Link } from 'react-router-dom';
-// import { useState } from 'react';
-// import { Box } from '@mui/material';
-
-// export default function UserList() {
-// const [data, setData] = useState(userRows);
-
-// const handleDelete = (id) => {
-//     setData(data.filter((item) => item.id !== id));
-// };
-
-// const columns = [
-//     { field: 'id', headerName: 'ID', width: 90 },
-//     {
-//         field: 'fullname',
-//         headerName: 'Fullname',
-//         width: 200,
-//         renderCell: (params) => {
-//             return (
-//                 <div className="userListUser">
-//                     <img className="userListImg" src={params.row.avatar} alt="" />
-//                     {params.row.username}
-//                 </div>
-//             );
-//         }
-//     },
-//     { field: 'phone', headerName: 'Phone Number', width: 200 },
-//     {
-//         field: 'status',
-//         headerName: 'Status',
-//         width: 120
-//     },
-//     {
-//         field: 'business',
-//         headerName: 'Business Name',
-//         width: 160
-//     },
-
-//     {
-//         field: 'tin',
-//         headerName: 'Tin Number',
-//         width: 160
-//     },
-//     {
-//         field: 'location',
-//         headerName: 'Location',
-//         width: 160
-//     },
-//     {
-//         field: 'nida',
-//         headerName: 'National ID',
-//         width: 160
-//     },
-//     {
-//         field: 'action',
-//         headerName: 'Action',
-//         width: 200,
-//         renderCell: (params) => {
-//             return (
-//                 <>
-//                     <Link to={'/view/' + params.row.id}>
-//                         <button className="userListEdit">View</button>
-//                     </Link>
-//                     <Link to={'/edit/' + params.row.id}>
-//                         <button className="userListEdit">Edit</button>
-//                     </Link>
-//                     <DeleteOutline className="userListDelete" onClick={() => handleDelete(params.row.id)} />
-//                 </>
-//             );
-//         }
-//     }
-// ];
-
-//     return (
-//         <Box>
-//             <DataGrid rows={data} disableSelectionOnClick columns={columns} checkboxSelection />
-//         </Box>
-//     );
-// }
-
 import React, { useState } from 'react';
 import './userList.css';
+import { Box, Grid } from '@mui/material';
+import { DataGrid, GridRow } from '@mui/x-data-grid';
+import clsx from 'clsx';
 
-import Box from '@mui/material/Box';
-import { DataGrid } from '@mui/x-data-grid';
-import { DeleteOutline } from '@mui/icons-material';
 import { transactioData } from '../../dummyData';
-import { Link } from 'react-router-dom';
+
+function CustomRow(props) {
+    const { className, index, ...other } = props;
+
+    return <GridRow index={index} className={clsx(className, index % 2 === 0 ? 'odd' : 'even')} {...other} />;
+}
 
 export default function TransactionList() {
     const [data, setData] = useState(transactioData);
 
-    const handleDelete = (id) => {
-        setData(data.filter((item) => item.id !== id));
-    };
+    // const handleDelete = (id) => {
+    //     setData(data.filter((item) => item.id !== id));
+    // };
 
     // fullname: 'Jon Snow',
     //   date: '2022-04-28',
@@ -109,49 +30,69 @@ export default function TransactionList() {
         {
             field: 'fullname',
             headerName: 'Fullname',
-            width: 100,
+            width: 140,
             renderCell: (params) => {
                 return <div className="userListUser">{params.row.fullname}</div>;
             }
         },
 
-        { field: 'receiptID', headerName: 'Receipt ID', width: 100 },
+        { field: 'receiptID', headerName: 'Receipt ID', width: 120 },
 
         {
             field: 'businessName',
             headerName: 'Business Name',
-            width: 180
+            width: 200
         },
 
         {
             field: 'amount',
             headerName: 'Amount',
             width: 150
-        },
-
-        {
-            field: 'action',
-            headerName: 'Action',
-            width: 180,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Link to={'/view/' + params.row.id}>
-                            <button className="userListEdit">View</button>
-                        </Link>
-                        <Link to={'/edit/' + params.row.id}>
-                            <button className="userListEdit">Edit</button>
-                        </Link>
-                        <DeleteOutline className="userListDelete" onClick={() => handleDelete(params.row.id)} />
-                    </>
-                );
-            }
         }
+
+        // {
+        //     field: 'action',
+        //     headerName: 'Action',
+        //     width: 180,
+        //     renderCell: (params) => {
+        //         return (
+        //             <>
+        //                 <Link to={'/view/' + params.row.id}>
+        //                     <button className="userListEdit">View</button>
+        //                 </Link>
+        //                 <Link to={'/edit/' + params.row.id}>
+        //                     <button className="userListEdit">Edit</button>
+        //                 </Link>
+        //                 <DeleteOutline className="userListDelete" onClick={() => handleDelete(params.row.id)} />
+        //             </>
+        //         );
+        //     }
+        // }
     ];
 
     return (
-        <Box sx={{ height: 500, width: '80%' }}>
-            <DataGrid rows={data} columns={columns} pageSize={10} rowsPerPageOptions={[10]} disableSelectionOnClick />
-        </Box>
+        <Grid container spacing={0} direction="column" alignItems="center" justifyContent="flex-start" style={{ minHeight: '100%' }}>
+            <Box
+                sx={{
+                    height: 500,
+                    width: '65%',
+                    '& .odd': {
+                        bgcolor: '#cbd4cd'
+                    },
+                    '& .even': {
+                        bgcolor: '#f7fff9'
+                    }
+                }}
+            >
+                <DataGrid
+                    components={{ Row: CustomRow }}
+                    rows={data}
+                    columns={columns}
+                    pageSize={10}
+                    rowsPerPageOptions={[10]}
+                    disableSelectionOnClick
+                />
+            </Box>
+        </Grid>
     );
 }

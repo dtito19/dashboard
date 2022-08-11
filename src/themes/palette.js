@@ -66,8 +66,8 @@ export default function themePalette(theme) {
             hint: theme.colors?.grey100
         },
         background: {
-            paper: theme.paper,
-            default: theme.backgroundDefault
+            paper: '#fff',
+            default: '#020205'
         }
     };
 }

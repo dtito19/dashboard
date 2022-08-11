@@ -284,117 +284,87 @@ export const userDetails = [
         taxClearence: '../../assets/images/google.svg',
         transaction: 'Tsh 120.00'
     }
-    // {
-    //   id: 4,
-    //   fullname: 'Jon Snow',
-    //   phoneNumber: '0712345678',
-    //   transaction: 'Tsh 120.00'
-    // },
-    // {
-    //   id: 5,
-    //   fullname: 'Jon Snow',
-    //   phoneNumber: '0712345678',
-    //   transaction: 'Tsh 120.00'
-    // },
-    //   {
-    //       id: 2,
-    //       fullname: 'Jon Snow',
-    //       phoneNumber: '0712345678',
-    //       businessName: 'Tukae Pamoja',
-    //       tinNumber: '1234',
-    //       location: 'Pugu',
-    //       nidaNumber: '123456789012',
-    //       status: 'active',
-    //       transaction: 'Tsh 120.00'
-    //   },
-    //   {
-    //       id: 3,
-    //       fullname: 'Jon Snow',
-    //       phoneNumber: '0712345678',
-    //       businessName: 'Tukae Pamoja',
-    //       tinNumber: '1234',
-    //       location: 'Pugu',
-    //       nidaNumber: '123456789012',
-    //       status: 'active',
-    //       transaction: 'Tsh 120.00'
-    //   },
-    //   {
-    //       id: 4,
-    //       fullname: 'Jon Snow',
-    //       phoneNumber: '0712345678',
-    //       businessName: 'Tukae Pamoja',
-    //       tinNumber: '1234',
-    //       location: 'Pugu',
-    //       nidaNumber: '123456789012',
-    //       status: 'active',
-    //       transaction: 'Tsh 120.00'
-    //   },
-    //   {
-    //       id: 5,
-    //       fullname: 'Jon Snow',
-    //       phoneNumber: '0712345678',
-    //       businessName: 'Tukae Pamoja',
-    //       tinNumber: '1234',
-    //       location: 'Pugu',
-    //       nidaNumber: '123456789012',
-    //       status: 'active',
-    //       transaction: 'Tsh 120.00'
-    //   },
-    //   {
-    //       id: 6,
-    //       fullname: 'Jon Snow',
-    //       phoneNumber: '0712345678',
-    //       businessName: 'Tukae Pamoja',
-    //       tinNumber: '1234',
-    //       location: 'Pugu',
-    //       nidaNumber: '123456789012',
-    //       status: 'active',
-    //       transaction: 'Tsh 120.00'
-    //   },
-    //   {
-    //       id: 7,
-    //       fullname: 'Jon Snow',
-    //       phoneNumber: '0712345678',
-    //       businessName: 'Tukae Pamoja',
-    //       tinNumber: '1234',
-    //       location: 'Pugu',
-    //       nidaNumber: '123456789012',
-    //       status: 'active',
-    //       transaction: 'Tsh 120.00'
-    //   },
-    //   {
-    //       id: 8,
-    //       fullname: 'Jon Snow',
-    //       phoneNumber: '0712345678',
-    //       businessName: 'Tukae Pamoja',
-    //       tinNumber: '1234',
-    //       location: 'Pugu',
-    //       nidaNumber: '123456789012',
-    //       status: 'active',
-    //       transaction: 'Tsh 120.00'
-    //   },
-    //   {
-    //       id: 9,
-    //       fullname: 'Jon Snow',
-    //       phoneNumber: '0712345678',
-    //       businessName: 'Tukae Pamoja',
-    //       tinNumber: '1234',
-    //       location: 'Pugu',
-    //       nidaNumber: '123456789012',
-    //       status: 'active',
-    //       transaction: 'Tsh 120.00'
-    //   },
-    //   {
-    //       id: 10,
-    //       fullname: 'Jon Snow',
-    //       phoneNumber: '0712345678',
-    //       businessName: 'Tukae Pamoja',
-    //       tinNumber: '1234',
-    //       location: 'Pugu',
-    //       nidaNumber: '123456789012',
-    //       status: 'active',
-    //       transaction: 'Tsh 120.00'
-    //   }
+];
+
+export const receiptsData = [
+    {
+        id: 1,
+        customername: 'Jane Doe',
+        tin: '1234',
+        amount: '6000000',
+        description: 'kskj nsjsn sjcsj',
+
+        date: '12/12/2012'
+    },
+    {
+        id: 2,
+        customername: 'Jane Doe',
+        tin: '1234',
+        amount: '6000000',
+        description: 'kskj nsjsn sjcsj',
+
+        date: '12/12/2012'
+    },
+    {
+        id: 3,
+        customername: 'Jane Doe',
+        tin: '1234',
+        amount: '6000000',
+        description: 'kskj nsjsn sjcsj',
+
+        date: '12/12/2012'
+    },
+    {
+        id: 4,
+        customername: 'Jane Doe',
+        tin: '1234',
+        amount: '6000000',
+        description: 'kskj nsjsn sjcsj',
+
+        date: '12/12/2012'
+    },
+    {
+        id: 5,
+        customername: 'Jane Doe',
+        tin: '1234',
+        amount: '6000000',
+        description: 'kskj nsjsn sjcsj',
+
+        date: '12/12/2012'
+    }
+];
+
+export const customerData = [
+    {
+        id: 1,
+        customername: 'Jane Doe',
+        phone: '6000000',
+        tin: '1234'
+    },
+    {
+        id: 2,
+        customername: 'Jane Doe',
+        phone: '6000000',
+        tin: '1234'
+    },
+    {
+        id: 3,
+        customername: 'Jane Doe',
+        phone: '6000000',
+        tin: '1234'
+    },
+    {
+        id: 4,
+        customername: 'Jane Doe',
+        phone: '6000000',
+        tin: '1234'
+    },
+    {
+        id: 5,
+        customername: 'Jane Doe',
+        phone: '6000000',
+        tin: '1234'
+    }
 ];
 
 export const productRows = [

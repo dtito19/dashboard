@@ -11,7 +11,9 @@ import config from 'config';
 const LogoSection = () => (
     <ButtonBase disableRipple component={Link} to={config.defaultPath}>
         {/* <Logo /> */}
-        <Typography variant="h3">Dashboard</Typography>
+        <Typography variant="h1" color={'white'}>
+            Dashboard
+        </Typography>
     </ButtonBase>
 );
 
