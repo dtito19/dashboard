@@ -67,7 +67,7 @@ export default function themePalette(theme) {
         },
         background: {
             paper: '#fff',
-            default: '#020205'
+            default: '#fff'
         }
     };
 }
